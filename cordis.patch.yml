@@ -1,0 +1,19 @@
+# dsh-acp-orphan-adopter 的 bundle patch：一行 insert 挂载 Host 半身。
+#
+# 关掉它：把 enabled 改成 false（或直接从 desktop 的 dsh.profile.bundles 里移除本包）。
+- insert:
+    - id: acp-orphan-adopter
+      name: 'dsh-acp-orphan-adopter'
+      config:
+        # 总开关。
+        enabled: true
+        # 启动后首次扫描延迟（毫秒）。
+        startupDelayMs: 8000
+        # 之后每隔多久再扫一次（毫秒）；0 = 只在启动时扫一次。
+        intervalMs: 60000
+        # true = 只报告不写入，用来先预览会影响哪些会话。
+        dryRun: false
+        # 白名单：只归入 cwd 以这些前缀开头的会话；空数组 = 全部。
+        onlyUnder: []
+        # 真的归入会话时是否打 info 日志。
+        log: true
