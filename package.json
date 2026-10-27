@@ -1,0 +1,27 @@
+{
+  "name": "dsh-acp-orphan-adopter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把「未分组」的孤儿会话按工作目录自动归入对应工作区（Workspace），不做任何删除。",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2"
+  }
+}
